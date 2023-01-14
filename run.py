@@ -19,3 +19,5 @@ def play(word):
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
+    while not guessed and tries > 0:
+        guess = input('Please choose a letter: ').upper()
