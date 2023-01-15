@@ -1,5 +1,55 @@
 import random
-from words import word_list
+word_list = [
+    'code',
+    'institute',
+    'mount',
+    'extend',
+    'brown',
+    'expert',
+    'tired',
+    'humidity',
+    'backpack',
+    'crust',
+    'dent',
+    'market',
+    'knock',
+    'blue',
+    'windy',
+    'coin',
+    'throw',
+    'silence',
+    'bluff',
+    'red',
+    'climb',
+    'rooster',
+    'weaver',
+    'snob',
+    'kickoff',
+    'match',
+    'quaker',
+    'banksman',
+    'excite',
+    'remember',
+    'mend',
+    'brick',
+    'pruning',
+    'coat',
+    'emerald',
+    'paraguay',
+    'manic',
+    'multiple',
+    'square',
+    'funded',
+    'gross',
+    'orange',
+    'dream',
+    'peanut',
+    'strict',
+    'mystic',
+    'lend',
+    'guide',
+    'strain']
+
 
 # code for selecting a word at random
 def get_word():
@@ -13,19 +63,32 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print("-*-*-*-*-*-*-*-*-*-*-*-")
-    print(" ")
-    print("LET'S PLAY HANGMAN!")
-    print(" ")
-    print("-*-*-*-*-*-*-*-*-*-*-*-")
-    print("How to play.")
+    intro =    """
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-------
+    *                                     *     |
+    *                                     *     O
+    *                                     *    \|/
+    *        LET'S PLAY HANGMAN!!!        *     |
+    *                                     *    / \\
+    *                                     *
+    *                                     *
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- 
+    *              HOW TO PLAY            *                          
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    *  You need to guess the secret word  *
+    * by choosing a letter.Each incorrect *
+    *   guess brings you closer to being  *
+    *   hung. Guess the right letter and  * 
+    *        word and save yourself.      *  
+    -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    """
+    print(intro)
     rules = """
     You need to guess the secret word by choosing a letter.
     Each incorrect guess brings you closer to being hung.
     Guess the right letter and word and save yourself.
     Good luck!
     """
-    print(rules)
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
@@ -78,9 +141,9 @@ def display_hangman(tries):
                    |     \\|/
                    |      |
                    |     / \\
-                   -
+                  ---
                 """,
-                # head, torso, both arms, and one leg
+                # failed 5th attempt
                 """
                    --------
                    |      |
@@ -88,9 +151,9 @@ def display_hangman(tries):
                    |     \\|/
                    |      |
                    |     / 
-                   -
+                  ---
                 """,
-                # head, torso, and both arms
+                # failed 4th attempt
                 """
                    --------
                    |      |
@@ -98,9 +161,9 @@ def display_hangman(tries):
                    |     \\|/
                    |      |
                    |      
-                   -
+                  ---
                 """,
-                # head, torso, and one arm
+                # failed 3rd attempt
                 """
                    --------
                    |      |
@@ -108,9 +171,9 @@ def display_hangman(tries):
                    |     \\|
                    |      |
                    |     
-                   -
+                  ---
                 """,
-                # head and torso
+                # failed 2nd attempt
                 """
                    --------
                    |      |
@@ -118,9 +181,9 @@ def display_hangman(tries):
                    |      |
                    |      |
                    |     
-                   -
+                  ---
                 """,
-                # head
+                # failed 1st attempt
                 """
                    --------
                    |      |
@@ -128,7 +191,7 @@ def display_hangman(tries):
                    |    
                    |      
                    |     
-                   -
+                  ---
                 """,
                 # initial empty state
                 """
@@ -138,7 +201,7 @@ def display_hangman(tries):
                    |    
                    |      
                    |     
-                   -
+                  ---
                 """
     ]
     return stages[tries]
@@ -147,7 +210,7 @@ def display_hangman(tries):
 def main():
     word = get_word()
     play(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
+    while input("Fancy another go? (Y/N) ").upper() == "Y":
         word = get_word()
         play(word)
 
