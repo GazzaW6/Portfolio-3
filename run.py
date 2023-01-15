@@ -1,3 +1,5 @@
+# Code based off python code taught by KITE (https://www.youtube.com/@KiteHQ)
+
 import random
 word_list = [
     'code',
@@ -83,12 +85,6 @@ def play(word):
     -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     """
     print(intro)
-    rules = """
-    You need to guess the secret word by choosing a letter.
-    Each incorrect guess brings you closer to being hung.
-    Guess the right letter and word and save yourself.
-    Good luck!
-    """
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
@@ -122,12 +118,13 @@ def play(word):
                 guessed = True
                 word_completion = word
         else:
-            print("Not a valid guess.")
+            print("You can't do that. Try again")
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
     if guessed:
         print("Congratulations, you guessed the correct word! You win!")
+        print(':)')
     else:
         print("Oh no!!! The word was " + word + ". Better luck next time!")
 
@@ -140,7 +137,7 @@ def display_hangman(tries):
                    |      O
                    |     \\|/
                    |      |
-                   |     / \\
+                  /|\    / \\
                   ---
                 """,
                 # failed 5th attempt
@@ -150,7 +147,7 @@ def display_hangman(tries):
                    |      O
                    |     \\|/
                    |      |
-                   |     / 
+                  /|\    / 
                   ---
                 """,
                 # failed 4th attempt
@@ -160,7 +157,7 @@ def display_hangman(tries):
                    |      O
                    |     \\|/
                    |      |
-                   |      
+                  /|\      
                   ---
                 """,
                 # failed 3rd attempt
@@ -170,7 +167,7 @@ def display_hangman(tries):
                    |      O
                    |     \\|
                    |      |
-                   |     
+                  /|\     
                   ---
                 """,
                 # failed 2nd attempt
@@ -180,7 +177,7 @@ def display_hangman(tries):
                    |      O
                    |      |
                    |      |
-                   |     
+                  /|\      
                   ---
                 """,
                 # failed 1st attempt
@@ -190,7 +187,7 @@ def display_hangman(tries):
                    |      O
                    |    
                    |      
-                   |     
+                  /|\     
                   ---
                 """,
                 # initial empty state
@@ -200,7 +197,7 @@ def display_hangman(tries):
                    |      
                    |    
                    |      
-                   |     
+                  /|\     
                   ---
                 """
     ]
