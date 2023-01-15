@@ -13,16 +13,21 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print('-*-*-*-*-*-')
     print("Let's play Hangman!")
-    print('-*-*-*-*-*-')
-    print("How to play")
+    print(" ")
+    print("-*-*-*-*-*-*-*-*-*-*-*-")
+    print("How to play.")
+    rules = """
+    You need to guess the secret word by choosing a letter.
+    Each incorrect guess brings you closer to being hung.
+    Guess the right letter and word and save yourself.
+    """
+    print(rules)
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
-
     while not guessed and tries > 0:
-        guess = input("Please choose a letter or word: ").upper()
+        guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -52,13 +57,97 @@ def play(word):
                 word_completion = word
         else:
             print("Not a valid guess.")
-            print(display_hangman(tries))
-            print(word_completion)
-            print("\n")
+        print(display_hangman(tries))
+        print(word_completion)
+        print("\n")
     if guessed:
-        print("Congrats, you guessed the word! You win!")
+        print("Congratulations, you guessed the correct word! You win!")
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
+        print("Oh no, you're out of tries. The word is " + word + ". Better luck next time!")
 
 
 def display_hangman(tries):
+    stages = [  # final state: head, torso, both arms, and both legs
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                # head, torso, both arms, and one leg
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # head, torso, and both arms
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                # head, torso, and one arm
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                # head and torso
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # head
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # initial empty state
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
+    return stages[tries]
+
+
+def main():
+    word = get_word()
+    play(word)
+    while input("Play Again? (Y/N) ").upper() == "Y":
+        word = get_word()
+        play(word)
+
+
+if __name__ == "__main__":
+    main()

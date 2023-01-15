@@ -1,6 +1,6 @@
 word_list = [
-    'wares',
-    'soup',
+    'code',
+    'institute',
     'mount',
     'extend',
     'brown',
@@ -30,7 +30,7 @@ word_list = [
     'excite',
     'thinking',
     'mend',
-    'allergen',
+    'brick',
     'pruning',
     'coat',
     'emerald',
