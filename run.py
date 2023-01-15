@@ -89,7 +89,7 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please choose a letter or word: ").upper()
+        guess = input("Please choose a letter: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -107,16 +107,6 @@ def play(word):
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
-        elif len(guess) == len(word) and guess.isalpha():
-            if guess in guessed_words:
-                print("You already guessed the word", guess)
-            elif guess != word:
-                print(guess, "is not the word.")
-                tries -= 1
-                guessed_words.append(guess)
-            else:
-                guessed = True
-                word_completion = word
         else:
             print("You can't do that. Try again")
         print(display_hangman(tries))
