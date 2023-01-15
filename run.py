@@ -1,19 +1,21 @@
 import random
 from words import word_list
 
-
+# code for selecting a word at random
 def get_word():
     word = random.choice(word_list)
     return word.upper()
 
-
+# code for playing the game and displaying rules
 def play(word):
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print("Let's play Hangman!")
+    print("-*-*-*-*-*-*-*-*-*-*-*-")
+    print(" ")
+    print("LET'S PLAY HANGMAN!")
     print(" ")
     print("-*-*-*-*-*-*-*-*-*-*-*-")
     print("How to play.")
@@ -21,13 +23,14 @@ def play(word):
     You need to guess the secret word by choosing a letter.
     Each incorrect guess brings you closer to being hung.
     Guess the right letter and word and save yourself.
+    Good luck!
     """
     print(rules)
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("Please choose a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -63,11 +66,11 @@ def play(word):
     if guessed:
         print("Congratulations, you guessed the correct word! You win!")
     else:
-        print("Oh no, you're out of tries. The word is " + word + ". Better luck next time!")
+        print("Oh no!!! The word was " + word + ". Better luck next time!")
 
-
+# display of hangman stages  
 def display_hangman(tries):
-    stages = [  # final state: head, torso, both arms, and both legs
+    stages = [  # lose:
                 """
                    --------
                    |      |
@@ -140,7 +143,7 @@ def display_hangman(tries):
     ]
     return stages[tries]
 
-
+# running the game
 def main():
     word = get_word()
     play(word)

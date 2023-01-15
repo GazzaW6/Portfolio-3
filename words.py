@@ -12,7 +12,7 @@ word_list = [
     'dent',
     'market',
     'knock',
-    'smite',
+    'blue',
     'windy',
     'coin',
     'throw',
