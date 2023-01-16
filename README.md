@@ -64,7 +64,5 @@ This game was deployed through GitHub and Heroku.
 
 ## Credits
 
+The code for this game is based off python code taught by KITE (https://www.youtube.com/@KiteHQ) as well as resources from Code Institute.
 
-
------
-Happy coding!
