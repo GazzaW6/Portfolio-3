@@ -1,4 +1,5 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+![Screenshot 2023-01-16 at 17 53 48](https://user-images.githubusercontent.com/111531426/212740548-022a32aa-f1a4-4f4b-abe3-0898745866b9.png)
 
 # Hangman
 
@@ -52,6 +53,9 @@ The code was tested using a pep8 linter as provided by code institute. They foll
 208: W292 no newline at end of file
 
 There are no known errors and the code works as is intended.
+
+## Further testing
+I would like to resolve the warming messages displayed in the tester but will need more time to understand why they are warnings.
 
 ## Deployment
 
