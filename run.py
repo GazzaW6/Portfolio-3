@@ -89,7 +89,7 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please choose a letter: ").upper()
+        guess = input("Please choose a letter:\n ").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
