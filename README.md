@@ -16,6 +16,43 @@ This game is ideal for anyone who is wanting to improve their spelling or who is
 
 ## Testing
 
+The code was tested using a pep8 linter as provided by code institute. They following messages were recieved when the code was run through the tester:
+
+62: E302 expected 2 blank lines, found 1
+68: E222 multiple spaces after operator
+72: W605 invalid escape sequence '\|'
+77: W291 trailing whitespace
+78: W291 trailing whitespace
+83: W291 trailing whitespace
+84: W291 trailing whitespace
+104: E501 line too long (81 > 79 characters)
+121: W291 trailing whitespace
+122: E302 expected 2 blank lines, found 1
+130: W605 invalid escape sequence '\ '
+140: W605 invalid escape sequence '\ '
+140: W291 trailing whitespace
+150: W605 invalid escape sequence '\ '
+150: W291 trailing whitespace
+160: W605 invalid escape sequence '\ '
+160: W291 trailing whitespace
+170: W605 invalid escape sequence '\ '
+170: W291 trailing whitespace
+178: W291 trailing whitespace
+179: W291 trailing whitespace
+180: W605 invalid escape sequence '\ '
+180: W291 trailing whitespace
+187: W291 trailing whitespace
+188: W291 trailing whitespace
+189: W291 trailing whitespace
+190: W605 invalid escape sequence '\ '
+190: W291 trailing whitespace
+197: E302 expected 2 blank lines, found 1
+207: W293 blank line contains whitespace
+208: W293 blank line contains whitespace
+208: W292 no newline at end of file
+
+There are no known errors and the code works as is intended.
+
 ## Creating the Heroku app
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
