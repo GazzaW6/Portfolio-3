@@ -53,22 +53,18 @@ The code was tested using a pep8 linter as provided by code institute. They foll
 
 There are no known errors and the code works as is intended.
 
-## Creating the Heroku app
+## Deployment
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+This game was deployed through GitHub and Heroku.
+- Fork or clone this repositry
+- Create a new Heroku app
+- The build blocks have been set to Python and NodeJS
+- Link the app to the repository
+- Click on Deploy
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Credits
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 -----
 Happy coding!
